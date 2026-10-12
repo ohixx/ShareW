@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" width="112" alt="ShareW">
+</p>
+
 <h1 align="center">ShareW</h1>
 
 <p align="center">
@@ -9,14 +13,14 @@
   <img src="https://img.shields.io/badge/C%2B%2B-20-00599c?style=flat-square" alt="C++20">
   <img src="https://img.shields.io/badge/Qt-6-41cd52?style=flat-square" alt="Qt6">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3-3ac97b?style=flat-square" alt="BSD-3"></a>
-  <img src="https://img.shields.io/badge/status-planning-f5af3c?style=flat-square" alt="planning">
+  <img src="https://img.shields.io/badge/status-early%20dev-f5af3c?style=flat-square" alt="early dev">
 </p>
 
 ---
 
 ShareW is a screenshot and annotation tool for Wayland in the spirit of ShareX. Capture a region, a window or a whole screen, mark it up, and send it where you need it, on any compositor and window manager: Sway, Hyprland, river, niri, KDE, GNOME and others.
 
-> **Status: planning.** The repository only has the license and this document so far. Everything below describes the intended design, not working features.
+> **Status: early development.** A working base exists: capture through `xdg-desktop-portal`, region selection and a simple editor (pen, line, arrow, rectangle, ellipse, text, undo / redo, copy and save). Everything else below is still a plan.
 
 ## Planned features
 
@@ -70,14 +74,14 @@ The backend is picked automatically and can be forced in the config. If a compos
 
 ## Build
 
-The project is not buildable yet. Once there is code, the expected steps are:
+Requires Qt 6 (Base, Widgets, DBus) and CMake 3.20+:
 
 ```
 cmake -S . -B build
 cmake --build build -j"$(nproc)"
 ```
 
-Expected dependencies: a C++20 compiler, CMake 3.20+, Qt 6 (Base, Widgets), `wayland` and `wayland-protocols`.
+Run `./build/shareW` (full screen) or `./build/shareW region` (region). The `window` mode is not implemented yet.
 
 ## Roadmap
 

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" width="112" alt="ShareW">
+</p>
+
 <h1 align="center">ShareW</h1>
 
 <p align="center">
@@ -9,14 +13,14 @@
   <img src="https://img.shields.io/badge/C%2B%2B-20-00599c?style=flat-square" alt="C++20">
   <img src="https://img.shields.io/badge/Qt-6-41cd52?style=flat-square" alt="Qt6">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3-3ac97b?style=flat-square" alt="BSD-3"></a>
-  <img src="https://img.shields.io/badge/status-planning-f5af3c?style=flat-square" alt="planning">
+  <img src="https://img.shields.io/badge/status-early%20dev-f5af3c?style=flat-square" alt="early dev">
 </p>
 
 ---
 
 ShareW это программа для скриншотов и разметки под Wayland в духе ShareX. Снимает область, окно или весь экран, даёт нарисовать поверх и отправляет результат куда нужно. Работает на любом композиторе и оконном менеджере: Sway, Hyprland, river, niri, KDE, GNOME и других.
 
-> **Статус: планирование.** Пока в репозитории только лицензия и этот документ. Всё ниже описывает задуманный дизайн, а не готовые функции.
+> **Статус: ранняя разработка.** Есть рабочая база: захват через `xdg-desktop-portal`, выбор области и простой редактор (карандаш, линия, стрелка, прямоугольник, эллипс, текст, отмена / повтор, копирование и сохранение). Остальное ниже пока только план.
 
 ## Планируемые возможности
 
@@ -70,14 +74,14 @@ Wayland намеренно не даёт клиентам читать экра�
 
 ## Сборка
 
-Пока собирать нечего. Когда появится код, шаги будут такими:
+Нужны Qt 6 (Base, Widgets, DBus) и CMake 3.20+:
 
 ```
 cmake -S . -B build
 cmake --build build -j"$(nproc)"
 ```
 
-Ожидаемые зависимости: компилятор с C++20, CMake 3.20+, Qt 6 (Base, Widgets), `wayland` и `wayland-protocols`.
+Запуск: `./build/shareW` (весь экран) или `./build/shareW region` (область). Режим `window` пока не реализован.
 
 ## План
 
